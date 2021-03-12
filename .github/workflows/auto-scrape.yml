@@ -2,7 +2,7 @@ name: auto-scrape
 on:
   schedule:
     # * is a special character in YAML so you have to quote this string
-    - cron:  '* * * * *'
+    - cron:  '0 0 * * *'
 jobs:
   scrape-confessions:
     runs-on: ubuntu-latest
