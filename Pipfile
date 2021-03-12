@@ -19,6 +19,8 @@ tqdm = "*"
 facebook-scraper = "*"
 pandas = "*"
 vadersentiment = "*"
+pymongo = "*"
+python-dotenv = "*"
 
 [requires]
 python_version = "3.8"
