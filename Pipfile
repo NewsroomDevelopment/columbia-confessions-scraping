@@ -21,6 +21,7 @@ pandas = "*"
 vadersentiment = "*"
 pymongo = "*"
 python-dotenv = "*"
+dnspython = "*"
 
 [requires]
 python_version = "3.8"
