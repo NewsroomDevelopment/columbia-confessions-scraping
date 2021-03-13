@@ -11,23 +11,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-      - name: Pipenv for Github Actions
-        # You may pin to the exact commit or the version.
-        # uses: VaultVulp/action-pipenv@0e0abc7839b234802947bb8aa1a7c7b8b00a2ff4
-        uses: VaultVulp/action-pipenv@v2.0.1
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+      
+      # Set up Python 3
+      - name: Set up Python
+        uses: actions/setup-python@v2
         with:
-          # pipenv command and its argument to be executed
-          command: install
-      - name: Setup Python
-        uses: actions/setup-python@v2.2.1
-        
-      - name: Run Pipenv Shell
-        # You may pin to the exact commit or the version.
-        # uses: VaultVulp/action-pipenv@0e0abc7839b234802947bb8aa1a7c7b8b00a2ff4
-        uses: VaultVulp/action-pipenv@v2.0.1
-        with:
-          # pipenv command and its argument to be executed
-          command: shell
-        
-      - name: Run Script
-        run: python scraper.py
+          python-version: '3.9'
+
+      # Install pip and npm dependencies
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pipenv
+          pipenv install
+      - name: Run scraper
+        run: pipenv run python scraper.py
