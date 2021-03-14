@@ -28,6 +28,6 @@ jobs:
           pipenv install
       - name: Run scraper
         env:
-          MONGO_USERNAME: ${{ secrets.MONGO_USERNAME }}
-          MONGO_PASSWORD: ${{ secrets.MONGO_PASSWORD }}
+          MDB_USERNAME: ${{ secrets.MDB_USERNAME }}
+          MDB_PASSWORD: ${{ secrets.MDB_PASSWORD }}
         run: pipenv run python scraper.py
