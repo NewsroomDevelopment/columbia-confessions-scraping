@@ -100,13 +100,17 @@ for i, post in enumerate(get_posts(page_name, pages=3)):
             output_data.append(post_data)
     #print('---------------------')
 
-print(output_data)
+print(len(output_data))
 
+test_output_data = output_data[0:2]
 for post_data in output_data:
     myquery = {"id_": post_data["_id"]}
-    results = mycol.count_documents(myquery)
+    result = list(mycol.find(myquery))
+    print("result " + result)
+    print("len: " + len(result))
+    #
 
-    if (results == 0):
+    if (len(result) == 0):
         mycol.insert_one(post_data)
         print("not found, inserted")
     else:
