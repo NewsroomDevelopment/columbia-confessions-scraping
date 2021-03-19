@@ -104,13 +104,10 @@ print(len(output_data))
 
 test_output_data = output_data[0:2]
 for post_data in output_data:
-    myquery = {"id_": post_data["_id"]}
-    result = list(mycol.find(myquery))
-    print("result " + result)
-    print("len: " + len(result))
-    #
+    myquery = {"_id": post_data["_id"]}
+    result = mycol.count_documents(myquery)
 
-    if (len(result) == 0):
+    if (result == 0):
         mycol.insert_one(post_data)
         print("not found, inserted")
     else:
