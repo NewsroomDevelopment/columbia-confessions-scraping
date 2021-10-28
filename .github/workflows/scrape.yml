@@ -9,6 +9,9 @@ on:
 jobs:
   scrape-confessions:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        mongodb-version: [3.6, 4.0, 4.2]
     steps:
 
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
