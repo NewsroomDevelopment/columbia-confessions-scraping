@@ -1,27 +1,18 @@
 [[source]]
-name = "pypi"
 url = "https://pypi.org/simple"
 verify_ssl = true
-
-[dev-packages]
-pylint = "*"
-yapf = "*"
+name = "pypi"
 
 [packages]
-jupyter = "*"
-requests = "*"
-beautifulsoup4 = "*"
-lxml = "*"
-boto3 = "*"
-asyncio = "*"
-aiohttp = "*"
-tqdm = "*"
 facebook-scraper = "*"
 pandas = "*"
-vadersentiment = "*"
 pymongo = "*"
+vadersentiment = "*"
 python-dotenv = "*"
-dnspython = "*"
+jupyter = "*"
+jupyterlab = "*"
+
+[dev-packages]
 
 [requires]
 python_version = "3.8"

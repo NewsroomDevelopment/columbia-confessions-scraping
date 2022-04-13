@@ -125,7 +125,7 @@ for i, post in enumerate(get_posts(page_name, pages=10, options={"comments": Tru
                                             }
                                     }
                     mycol.update_one(myquery, updated_info)
-            print("updated")    # print('---------------------')
+                    print("updated")    # print('---------------------')
     except Exception as e:
         continue
 
